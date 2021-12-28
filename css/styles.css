@@ -14,7 +14,7 @@ ul, li {
 html, body {
   background-color: #97BBFF;
   /* background-color: #ff8f8f; */
-  color: #F7F7F7;
+  color: #000000;
   font-family: sans-serif;
   margin: 0px;
   padding: 0px;
@@ -32,7 +32,7 @@ body {
 }
 
 .ut {
-  font-family: 'Determination Sans', sans-serif
+  font-family: 'Determination Sans', sans-serif;
 }
 
 .logotype {
@@ -51,6 +51,32 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+h1, h2 {
+  color: #8D4242;
+  font-family: 'Determination Sans', sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+p {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .banner-image {
@@ -254,4 +280,19 @@ header {
     padding-right: 4px;
   }
 
+}
+
+.notice {
+  font-family: 'Determination Mono', sans-serif;
+  font-size: 20px;
+  margin-top: 36px;
+}
+
+.terms-list, .terms-list li {
+  list-style-type: circle;
+  padding-left: 12px;
+}
+
+.terms-list li {
+  margin-bottom: 8px;
 }
