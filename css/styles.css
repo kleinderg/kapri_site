@@ -38,6 +38,12 @@ body {
 .logotype {
   font-size: 32px;
   color: black;
+  font-family: 'Determination Sans', sans-serif;
+  text-decoration: none;
+}
+
+.logotype:hover {
+  text-decoration: underline;
 }
 
 header {
@@ -135,11 +141,6 @@ header {
 
 /* MOBILE NAV */
 
-.nav-menu {
-  /* height: 40px;
-  width: 40px; */
-}
-
 #menuToggle {
   display: flex;
   flex-direction: column;
@@ -192,7 +193,7 @@ header {
 {
   opacity: 1;
   transform: rotate(45deg) translate(-3px, -1px);
-  background: #36383F;
+  /* background: #36383F; */
 }
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
@@ -212,8 +213,7 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  /* width: 180px;
-  height: 400px; */
+  max-width: 340px;
   margin-top: -50px;
   padding: 50px;
   padding-top: 125px;
@@ -223,6 +223,7 @@ header {
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   list-style-type: none;
+  border-right: 6px solid #97BBFF;
 }
 
 #menu a {
