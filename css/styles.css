@@ -21,7 +21,15 @@ html, body {
 }
 
 body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .page-wrapper {
@@ -295,4 +303,22 @@ p {
 
 .terms-list li {
   margin-bottom: 8px;
+}
+
+.footer {
+  color: #749ce8;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.footer a {
+  color: #749ce8;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
