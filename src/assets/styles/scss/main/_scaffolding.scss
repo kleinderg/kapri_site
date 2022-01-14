@@ -1,0 +1,66 @@
+html {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  font-size: 16px;
+}
+
+body {
+  padding: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-weight: $font-weight-base; // TODO
+  font-size: $font-size-base; // TODO
+  color: $body-color; // TODO
+  line-height: 1.5; 
+  font-family: $font-family-base;
+  background-color: $pl-surface-base; // TODO
+}
+
+select,
+button,
+textarea,
+input {
+  vertical-align: baseline;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+*---- Common -----*/
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}

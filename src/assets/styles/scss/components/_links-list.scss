@@ -1,0 +1,89 @@
+.links-list-wrapper {
+  margin-top: 8px;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.links-list li {
+  display:flex;
+  margin-bottom: 16px;
+  width: 100%;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: white;
+  background-color: #ff8f8f;
+  border-color: #B74B4B;
+  border-image-slice: 2;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%23B74B4B' /></svg>");
+}
+
+.links-list li:hover {
+  background-color: #EC7E7E
+}
+
+.links-list li a {
+  display: flex;
+  text-decoration: none;
+  font-family: 'Determination Sans', sans-serif;
+  color: #8D4242;
+  font-size: 20px;
+  padding: 16px;
+  width: 100%;
+}
+
+/* .links-list .commission-link {
+  background-color: #707684;
+  border-color: #45484E;
+  border-image-slice: 2;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%2345484E' /></svg>");
+}
+
+.links-list .commission-link a {
+  color: #2E3034z;
+}
+
+.links-list .patreon-link {
+  background-color: #FF424D;
+  border-color: #86262C;
+  border-image-slice: 2;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%2386262C' /></svg>");
+}
+
+.links-list .patreon-link a {
+  color: #86262C;
+}
+
+.links-list .twitter-link {
+  background-color: #1DA1F2;
+  border-color: #0664A8;
+  border-image-slice: 2;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%230664A8' /></svg>");
+}
+
+.links-list .twitter-link a {
+  color: #00507D;
+} */
+
+@media screen and (max-width: 440px) {
+
+  .links-list {
+    padding-right: 4px;
+  }
+
+}

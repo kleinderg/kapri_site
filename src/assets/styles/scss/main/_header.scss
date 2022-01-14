@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logotype {
+  font-size: 32px;
+  color: black;
+  font-family: 'Determination Sans', sans-serif;
+  text-decoration: none;
+}
+
+.logotype:hover {
+  text-decoration: underline;
+}
