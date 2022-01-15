@@ -21,10 +21,68 @@
   <section>
     <h1>Pay the Kapri</h1>
     <p>Please see my <a routerLink="commissions">Commissions Info</a> page for terms and refund policy.</p>
-    <h2>Commission Description & Price</h2>
+
+    <form [formGroup]="paymentForm">
+      <h2>Commission Description & Price</h2>
+
+      <div class="form-field">
+        <label for="description">Description: </label>
+        <input id="description" type="text" formControlName="description">
+      </div>
+
+      <div class="form-field">
+        <label for="amount">Amount: </label>
+        <input id="amount" type="text" formControlName="amount">
+        <div *ngIf="paymentForm.controls.amount.touched && paymentForm.controls.amount.hasError('required')" class="form-error">Must include an amount.</div>
+      </div>
+      
+      <div class="form-field">
+        <label for="email">Email: </label>
+        <input id="email" type="email" formControlName="email">
+        <div *ngIf="paymentForm.controls.email.touched && paymentForm.controls.email.hasError('required')" class="form-error">Please include an email for your receipt.</div>
+        <div *ngIf="paymentForm.controls.email.touched && paymentForm.controls.email.hasError('email')" class="form-error">Must be a valid email.</div>
+      </div>
+      
+      <h2>Billing Information</h2>
+      <p>Kapri does not save your payment information. Payments are processed through <a href="https://www.paymentwall.com/en" target="_blank">Paymentwall</a>. Address is used for billing only, no shipments will be made.</p>
+      
+      <div class="address-section" formGroupName="address">
+        <div class="form-field">
+          <label for="addressLine1">Address Line 1: </label>
+          <input id="addressLine1" type="text" formControlName="addressLine1">
+          <div *ngIf="paymentForm.get('address')?.get('addressLine1')?.touched && paymentForm.get('address')?.get('addressLine1')?.hasError('required')" class="form-error">Please include the first line of your address.</div>
+        </div>
+        <div class="form-field">
+          <label for="addressLine2">Address Line 2: </label>
+          <input id="addressLine2" type="text" formControlName="addressLine2">
+        </div>
+
+        <div class="form-field">
+          <label for="city">City: </label>
+          <input id="city" type="text" formControlName="city">
+          <div *ngIf="paymentForm.get('address')?.get('city')?.touched && paymentForm.get('address')?.get('city')?.hasError('required')" class="form-error">Please include your city.</div>
+        </div>
+
+        <div class="form-field">
+          <label for="state">State: </label>
+          <input id="state" type="text" formControlName="state">
+        </div>
+
+        <div class="form-field">
+          <label for="postalCode">Postal Code: </label>
+          <input id="postalCode" type="text" formControlName="postalCode">
+          <div *ngIf="paymentForm.get('address')?.get('postalCode')?.touched && paymentForm.get('address')?.get('postalCode')?.hasError('required')" class="form-error">Please include your postal code.</div>
+        </div>
+
+        <div class="form-field">
+          <label for="country">Country: </label>
+          <input id="country" type="text" formControlName="country">
+          <div *ngIf="paymentForm.get('address')?.get('Country')?.touched && paymentForm.get('address')?.get('Country')?.hasError('required')" class="form-error">Please include the first line of your address.</div>
+        </div>
+      </div>
     
-    <h2>Billing Information</h2>
-    <p>Kapri does not save your payment information. Payments are processed through <a href="https://www.paymentwall.com/en" target="_blank">Paymentwall</a>. Address is used for billing only, no shipments will be made.</p>
+      <button type="button" (click)="submitPayment()">Pay the Goat</button>
+    </form>
     
   </section>
 </main>

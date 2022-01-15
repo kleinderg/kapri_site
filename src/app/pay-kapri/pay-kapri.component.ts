@@ -13,9 +13,19 @@ export class PayKapriComponent implements OnInit {
   payment: Payment;
   showConfirmation: boolean = false;
 
-  constructor() { }
+  constructor() {
+    this.payment = {
+      amount: 0,
+      address: {
+        addressLine1: "",
+        addressLine2: "",
+        city: "",
+        state: "",
+        postalCode: "",
+        country: "",
+      }
+    }
 
-  ngOnInit(): void {
     this.paymentForm = new FormGroup({
       description: new FormControl(this.payment.description),
       amount: new FormControl(this.payment.amount, Validators.required),
@@ -36,15 +46,22 @@ export class PayKapriComponent implements OnInit {
     })
   }
 
+  ngOnInit(): void {
+    
+  }
+
   submitPayment() {
     if (this.paymentForm.invalid) {
       this.markFormGroupTouched(this.paymentForm)
+      console.log("Payment form invalid.")
       return;
     }
     this.makePayment()
   }
 
   makePayment() {
+    console.log("Payment started.")
+    console.log(this.paymentForm.value)
     return;
   }
 
