@@ -15,9 +15,6 @@ html {
 
 body {
   padding: 0px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   margin: 0;
   height: 100%;
   // font-weight: $font-weight-base; // TODO
@@ -26,6 +23,13 @@ body {
   // line-height: 1.5; 
   font-family: $font-family-base;
   // background-color: $pl-surface-base; // TODO
+}
+
+.root-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 select,
