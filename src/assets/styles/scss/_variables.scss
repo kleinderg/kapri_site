@@ -3,7 +3,8 @@
 /* --------------- Widths --------------- */
 
 /* --------------- Typography --------------- */
-$font-family-base: 'Determination Sans', sans-serif !default;
+$font-family-base: "arial", sans-serif !default;
+$font-family-determination: 'Determination Sans', sans-serif !default;
 // $font-weight-base: 400 !default;
 // $font-weight-medium: 500 !default;
 // $font-weight-bold: 600 !default;
@@ -11,6 +12,7 @@ $font-family-base: 'Determination Sans', sans-serif !default;
 $font-size-h1: 32px !default;
 $font-size-h2: 24px !default;
 $font-size-p: 16px !default;
+$font-size-base: 16px !default;
 
 $margin-top-h1: 32px;
 $margin-top-h2: 24px;
@@ -20,8 +22,6 @@ $margin-bottom-p: 8px;
 $headings-font-family: inherit !default;
 // $headings-font-weight:   500 !default;
 // $headings-line-height:   1.1 !default;
-
-$headings-color: $kapri-red !default;
 
 $line-height-p: 22px;
 

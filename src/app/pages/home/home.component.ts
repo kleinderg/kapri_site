@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       {name: 'keywords', content: 'Furry Artist, Commissions, Art, NSFW Furry Art'},
       {name: 'description', content: 'Commission info and links for furry artist Kapri.'},
       {name: 'robots', content: 'index, follow'},
-      {name: 'image', content: 'img/img_banner.png'}
+      {name: 'image', content: '/assets/img/img_banner.png'}
     ]);
   }
 

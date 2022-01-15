@@ -1,36 +1,38 @@
 h1,
 .h1 {
-  font-weight: $font-weight-h1; // TODO
+  // font-weight: $font-weight-h1; // TODO
+  font-family: $font-family-determination;
   font-size: $font-size-h1;
-  line-height: $line-height-h1; // TODO
+  // line-height: $line-height-h1; // TODO
   letter-spacing: $letter-spacing-h1;
   margin-top: $margin-top-h1;
   margin-bottom: $margin-bottom-headings;
-  color: $headings-color;
+  color: $kapri-red;
 }
 h2,
 .h2 {
+  font-family: $font-family-determination;
   font-size: $font-size-h2;
   letter-spacing: $letter-spacing-h2;
   margin-top: $margin-top-h2;
   margin-bottom: $margin-bottom-headings;
-  color: $headings-color;
+  color: $kapri-red;
 }
 h3,
 .h3 {
-  font-size: $font-size-h3;
+  // font-size: $font-size-h3;
 }
 h4,
 .h4 {
-  font-size: $font-size-h4;
+  // font-size: $font-size-h4;
 }
 h5,
 .h5 {
-  font-size: $font-size-h5;
+  // font-size: $font-size-h5;
 }
 h6,
 .h6 {
-  font-size: $font-size-h6;
+  // font-size: $font-size-h6;
 }
 
 p, .p {

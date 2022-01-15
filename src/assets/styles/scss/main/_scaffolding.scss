@@ -1,3 +1,7 @@
+html, body {
+  background-color: #97BBFF;
+}
+
 html {
   position: absolute;
   top: 0;
@@ -6,6 +10,7 @@ html {
   right: 0;
   overflow-y: auto;
   font-size: 16px;
+  margin: 0;
 }
 
 body {
@@ -13,13 +18,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0;
   height: 100%;
-  font-weight: $font-weight-base; // TODO
-  font-size: $font-size-base; // TODO
-  color: $body-color; // TODO
-  line-height: 1.5; 
+  // font-weight: $font-weight-base; // TODO
+  font-size: $font-size-base;
+  color: $black;
+  // line-height: 1.5; 
   font-family: $font-family-base;
-  background-color: $pl-surface-base; // TODO
+  // background-color: $pl-surface-base; // TODO
 }
 
 select,
@@ -30,7 +36,7 @@ input {
 }
 
 div {
-  box-sizing: border-box;
+  // box-sizing: border-box;
 }
 
 img {
@@ -51,7 +57,7 @@ p {
   margin: 0 0 16px;
 }
 
-*---- Common -----*/
+/*---- Common -----*/
 .container {
   max-width: 1400px;
   margin: 0 auto;
