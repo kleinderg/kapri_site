@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Payment } from './payment.model';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pay-kapri',
@@ -8,23 +9,26 @@ import { Payment } from './payment.model';
   styleUrls: ['./pay-kapri.component.scss']
 })
 export class PayKapriComponent implements OnInit {
+  title: string = "Pay Kapri";
 
   paymentForm: FormGroup;
   payment: Payment;
   showConfirmation: boolean = false;
+  beforePayment: boolean = true;
 
-  constructor() {
-    this.payment = {
-      amount: 0,
-      address: {
-        addressLine1: "",
-        addressLine2: "",
-        city: "",
-        state: "",
-        postalCode: "",
-        country: "",
-      }
-    }
+  constructor(
+    private titleService: Title,
+    private metaService: Meta
+  ) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'Furry Artist, Commissions, Art, NSFW Furry Art, Kaprihorn Commissions, Kaprileak Commissions, Kapri Commissions'},
+      {name: 'description', content: 'Pricing and terms of service for commissioning Kapri.'},
+      {name: 'robots', content: 'noindex'},
+      {name: 'image', content: '/assets/img/img_banner.png'}
+    ]);
 
     this.paymentForm = new FormGroup({
       description: new FormControl(this.payment.description),
@@ -34,20 +38,8 @@ export class PayKapriComponent implements OnInit {
           Validators.required,
           Validators.email
         ]
-      ),
-      address: new FormGroup({
-        addressLine1: new FormControl(this.payment.address.addressLine1, Validators.required),
-        addressLine2: new FormControl(this.payment.address.addressLine2, Validators.required),
-        city: new FormControl(this.payment.address.city, Validators.required),
-        state: new FormControl(this.payment.address.state),
-        postalCode: new FormControl(this.payment.address.postalCode, Validators.required),
-        country: new FormControl(this.payment.address.country, Validators.required)
-      })
+      )
     })
-  }
-
-  ngOnInit(): void {
-    
   }
 
   submitPayment() {
