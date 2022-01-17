@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Payment } from './payment.model';
 import { Title, Meta } from '@angular/platform-browser';
+import { PaymentHelperService } from './service/payment-helper.service';
 
 @Component({
   selector: 'app-pay-kapri',
@@ -16,12 +17,23 @@ export class PayKapriComponent implements OnInit {
   showConfirmation: boolean = false;
   beforePayment: boolean = true;
 
+
+  get paymentDetails() {
+    return this.paymentForm.value as any;
+  }
+
   constructor(
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    private paymentHelper: PaymentHelperService,
   ) {}
 
   ngOnInit(): void {
+
+
+    //TODO: this should probably be received as an input from somwehere else, for now just defining it here so I can test.
+    this.payment = {description: 'Test description', amount: 10, email: 'myemail@email.com'}
+
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
       {name: 'keywords', content: 'Furry Artist, Commissions, Art, NSFW Furry Art, Kaprihorn Commissions, Kaprileak Commissions, Kapri Commissions'},
@@ -54,6 +66,8 @@ export class PayKapriComponent implements OnInit {
   makePayment() {
     console.log("Payment started.")
     console.log(this.paymentForm.value)
+    let url = this.paymentHelper.getWidgetUrl(this.paymentDetails.amount, this.paymentDetails.email, 'my test product');
+    window.open(url, "_blank");
     return;
   }
 

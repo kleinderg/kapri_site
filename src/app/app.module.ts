@@ -9,6 +9,7 @@ import { CommissionsComponent } from './pages/commissions/commissions.component'
 import { PayKapriComponent } from './pay-kapri/pay-kapri.component';
 import { SuccessComponent } from './pay-kapri/success/success.component';
 import { FailComponent } from './pay-kapri/fail/fail.component';
+import { PaymentHelperService } from './pay-kapri/service/payment-helper.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FailComponent } from './pay-kapri/fail/fail.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PaymentHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
