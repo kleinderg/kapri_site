@@ -2,12 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #749ce8;
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+.footer p {
+  color: #749ce8;
 }
 
 .footer a {

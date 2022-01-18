@@ -19,21 +19,23 @@
 
 <main>
   <section>
-    <h1>Pay the Kapri</h1>
-    <p>Please see my <a routerLink="commissions">Commissions Info</a> page for terms and refund policy.</p>
+    <h1>Pay Kapri</h1>
+    <p>Please see my <u><a routerLink="/commissions">Commissions Info</a></u> page for terms and refund policy.</p>
 
     <form [formGroup]="paymentForm">
       <h2>Commission</h2>
 
       <div class="form-field">
         <label for="description">Description: </label>
-        <input id="description" type="text" formControlName="description">
+        <input autofocus id="description" type="text" formControlName="description">
+        <div *ngIf="paymentForm.controls.description.touched && paymentForm.controls.description.hasError('maxlength')" class="form-error">Cannot exceed 251 characters.</div>
       </div>
 
       <div class="form-field">
         <label for="amount">Amount: </label>
         <input id="amount" type="text" formControlName="amount">
         <div *ngIf="paymentForm.controls.amount.touched && paymentForm.controls.amount.hasError('required')" class="form-error">Must include an amount.</div>
+        <div *ngIf="paymentForm.controls.amount.touched && paymentForm.controls.amount.hasError('pattern')" class="form-error">Must be a number.</div>
       </div>
       
       <div class="form-field">
@@ -43,10 +45,9 @@
         <div *ngIf="paymentForm.controls.email.touched && paymentForm.controls.email.hasError('email')" class="form-error">Must be a valid email.</div>
       </div>
       
-      <h2>Billing Information</h2>
-      <p>Kapri does not save your payment information. Payments are processed through <a href="https://www.paymentwall.com/en" target="_blank">Paymentwall</a>. Address is used for billing only, no shipments will be made.</p>
+      <p>Payments are processed through <a href="https://www.paymentwall.com/en" target="_blank">Paymentwall</a>.</p>
     
-      <button type="button" (click)="submitPayment()">Pay the Goat</button>
+      <button type="button" (click)="submitPayment()" class="btn">Pay the Goat</button>
     </form>
     
     

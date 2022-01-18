@@ -17,11 +17,6 @@ export class PayKapriComponent implements OnInit {
   showConfirmation: boolean = false;
   beforePayment: boolean = true;
 
-
-  get paymentDetails() {
-    return this.paymentForm.value as any;
-  }
-
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -29,11 +24,6 @@ export class PayKapriComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-
-    //TODO: this should probably be received as an input from somwehere else, for now just defining it here so I can test.
-    this.payment = {description: 'Test description', amount: 10, email: 'myemail@email.com'}
-
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
       {name: 'keywords', content: 'Furry Artist, Commissions, Art, NSFW Furry Art, Kaprihorn Commissions, Kaprileak Commissions, Kapri Commissions'},
@@ -43,9 +33,18 @@ export class PayKapriComponent implements OnInit {
     ]);
 
     this.paymentForm = new FormGroup({
-      description: new FormControl(this.payment.description),
-      amount: new FormControl(this.payment.amount, Validators.required),
-      email: new FormControl(this.payment.email,
+      description: new FormControl('',
+        [
+          Validators.maxLength(251)
+        ]
+      ),
+      amount: new FormControl('',
+        [
+          Validators.required,
+          Validators.pattern("^[0-9]*$")
+        ]
+      ),
+      email: new FormControl('',
         [
           Validators.required,
           Validators.email
@@ -60,13 +59,19 @@ export class PayKapriComponent implements OnInit {
       console.log("Payment form invalid.")
       return;
     }
-    this.makePayment()
+    this.payment = {
+      description: this.paymentForm.value.description,
+      amount: parseInt(this.paymentForm.value.amount),
+      email: this.paymentForm.value.email
+    }
+    // console.log(this.payment)
+    this.makePayment(this.payment)
   }
 
-  makePayment() {
+  makePayment(payment: Payment) {
     console.log("Payment started.")
     console.log(this.paymentForm.value)
-    let url = this.paymentHelper.getWidgetUrl(this.paymentDetails.amount, this.paymentDetails.email, 'my test product');
+    let url = this.paymentHelper.getWidgetUrl(this.payment.amount, this.payment.email, this.payment.description || "Payment");
     window.open(url, "_blank");
     return;
   }

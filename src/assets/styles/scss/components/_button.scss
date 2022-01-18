@@ -1,0 +1,22 @@
+button {
+  font-family: $font-family-determination;
+  font-size: $font-size-button;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: white;
+  background-color: #ff8f8f;
+  border-color: #B74B4B;
+  border-image-slice: 2;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h2v2H0zM2 0h2v2H2zM4 2h2v2H4zM2 4h2v2H2z' fill='%23B74B4B' /></svg>");
+  padding: 16px;
+  color: #8D4242;
+  margin-top: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #EC7E7E;
+}

@@ -11,8 +11,12 @@ $font-family-determination: 'Determination Sans', sans-serif !default;
 
 $font-size-h1: 32px !default;
 $font-size-h2: 24px !default;
-$font-size-p: 16px !default;
-$font-size-base: 16px !default;
+$font-size-label: 18px !default;
+$font-size-p: 18px !default;
+$font-size-base: 18px !default;
+$font-size-16: 16px !default;
+$font-size-error: 14px !default;
+$font-size-button: 20px !default;
 
 $margin-top-h1: 32px;
 $margin-top-h2: 24px;
@@ -27,6 +31,7 @@ $line-height-p: 22px;
 
 $letter-spacing-h1: 0.4px;
 $letter-spacing-h2: 0.2px;
+$letter-spacing-p: 0.2px;
 
 /* --------------- Colors --------------- */
 
