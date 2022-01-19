@@ -26,8 +26,6 @@ const firebaseConfig = {
   measurementId: "G-S0TH8HDLE4"
 };
 
-const app = initializeApp(firebaseConfig); 
-
 @NgModule({
   declarations: [
     AppComponent,

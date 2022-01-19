@@ -16,7 +16,15 @@ export class PaymentHelperService {
     constructor(
         private fns: AngularFireFunctions
     ) {
-        Paymentwall.Configure(Paymentwall.Base.API_GOODS, environment.APPLICATION_KEY, environment.SECRET_KEY) // TODO: Update me plz
+        console.log('service constructor')
+        const callable = fns.httpsCallable('config');
+        let data = callable({}).subscribe((response) => {
+            console.log('Response: ', response); // not sure what the response is yet as the request fails, once the emulator is running on dev environment can continue this
+        });
+
+        // console.log('data', data);
+
+        // Paymentwall.Configure(Paymentwall.Base.API_GOODS, environment.APPLICATION_KEY, environment.SECRET_KEY) // TODO: Update me plz
     }
 
 
