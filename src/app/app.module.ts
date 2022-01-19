@@ -9,8 +9,12 @@ import { CommissionsComponent } from './pages/commissions/commissions.component'
 import { PayKapriComponent } from './pay-kapri/pay-kapri.component';
 import { SuccessComponent } from './pay-kapri/success/success.component';
 import { FailComponent } from './pay-kapri/fail/fail.component';
-import { PaymentHelperService } from './pay-kapri/service/payment-helper.service';import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { PaymentHelperService } from './pay-kapri/service/payment-helper.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDlJt3zyyo3bd55oiAEi_j90HWvdDbAG0Y",
@@ -22,8 +26,7 @@ const firebaseConfig = {
   measurementId: "G-S0TH8HDLE4"
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig); 
 
 @NgModule({
   declarations: [
@@ -37,7 +40,11 @@ const analytics = getAnalytics(app);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)), // this and below were created by the cli tool
+    provideFunctions(() => getFunctions()),
+    AngularFireModule.initializeApp(environment.firebase), // these were added by following docs
+    AngularFireFunctionsModule
   ],
   providers: [PaymentHelperService],
   bootstrap: [AppComponent]
