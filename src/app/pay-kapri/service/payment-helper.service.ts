@@ -1,8 +1,9 @@
-declare var require: any
+declare var require: any;
 
-import { Injectable } from "@angular/core"
+import { Injectable } from "@angular/core";
 import * as uuid from 'uuid';
-import { environment } from "src/environments/environment.dev";
+import * as functions from 'firebase-functions';
+
 // import * as Paymentwall from 'paymentwall';
 
 var Paymentwall = require('paymentwall');
@@ -12,16 +13,9 @@ var Paymentwall = require('paymentwall');
 })
 export class PaymentHelperService {
     
-
-    // Paymentwall = require('paymentwall');
-
     constructor() {
-
-        //TODO: Load these from a config file that DOESN'T get put on github!!!
-        Paymentwall.Configure(Paymentwall.Base.API_GOODS, environment.APPLICATION_KEY, environment.SECRET_KEY)
-
+        Paymentwall.Configure(Paymentwall.Base.API_GOODS, functions.config().paymentwall.projectkey, functions.config().paymentwall.secretkey)
     }
-
 
     //https://docs.paymentwall.com/apis#section-param-optional
     getWidgetUrl(amount: number, userEmail: string, productName: string) {
@@ -40,8 +34,8 @@ export class PaymentHelperService {
                 'email': userEmail,
                 'history[registration_date]': Math.floor(Date.now() / 1000),
                 'ps': 'cc', // set this to all to allow all payment types, https://docs.paymentwall.com/reference/payment-system-shortcodes
-                'success_url': 'http://localhost:4200/pay-kapri/success', //TODO: should fetch baseURL from environment.ts
-                'failure_url': 'http://localhost:4200/pay-kapri/oop', //TODO: should fetch baseURL from environment.ts
+                'success_url': 'https://kaprihorn.com/pay-kapri/success',
+                'failure_url': 'https://kaprihorn.com/pay-kapri/oop',
             }
         )
 
