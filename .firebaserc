@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "kaprihorn"
-  },
-  "targets": {
-    "kaprihorn": {
-      "hosting": {
-        "kaprisite": [
-          "kaprihorn"
-        ]
-      }
-    }
   }
 }

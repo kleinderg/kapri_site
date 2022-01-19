@@ -134,16 +134,6 @@
               "devServerTarget": "kaprisite:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "kaprisite:build:production",
-            "firebaseProject": "kaprihorn",
-            "firebaseHostingSite": "kaprihorn"
-          }
         }
       }
     }
