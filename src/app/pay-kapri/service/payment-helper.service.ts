@@ -33,7 +33,7 @@ export class PaymentHelperService {
             {
                 'email': userEmail,
                 'history[registration_date]': Math.floor(Date.now() / 1000),
-                'ps': 'cc', // set this to all to allow all payment types, https://docs.paymentwall.com/reference/payment-system-shortcodes
+                'ps': 'all', // set this to all to allow all payment types, https://docs.paymentwall.com/reference/payment-system-shortcodes
                 'success_url': 'https://kaprihorn.com/pay-kapri/success', //TODO: should fetch baseURL from environment.ts
                 'failure_url': 'https://kaprihorn.com/pay-kapri/oop', //TODO: should fetch baseURL from environment.ts
             }

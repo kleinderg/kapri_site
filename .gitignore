@@ -45,7 +45,9 @@ environment.dev.ts
 environment.prod.ts
 environment.ts
 .env
+/.firebase
 
 # System Files
 .DS_Store
 Thumbs.db
+.firebase/hosting.ZGlzdC9rYXByaXNpdGU.cache
